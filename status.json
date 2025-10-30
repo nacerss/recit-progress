@@ -1,8 +1,8 @@
 {
-  "percent": 50,
+  "percent": 3,
   "current_task": "Chapitre 1 — La Douleur",
   "is_active": true,
-  "last_update": "2025-10-30T11:45:00+00:00",
+  "last_update": "2025-10-30T10:28:28Z",
   "milestones": [
     {
       "title": "Chapitre 1 — La Douleur",
@@ -12,10 +12,6 @@
     }
   ],
   "notes": "Premier chapitre terminé et publié.",
-  "details": {
-    "message": "Vous pouvez partager votre histoire dans la boîte aux lettres digitale.",
-    "email": "mailto:bal@deuxmainstory.fr",
-    "footer": "Et si vous le désirez, elle pourra, au fil du temps, être intégrée au récit."
-  },
+  "details": "Vous pouvez partager votre histoire dans la boîte aux lettres digitale bal@deuxmainstory.fr. Et si vous le désirez, elle pourra, au fil du temps, être intégrée au récit.",
   "edit_url": "#"
 }
