@@ -1,95 +1,49 @@
-<!DOCTYPE html>
-<html lang="fr" data-theme="brand">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avancée du récit — Live</title>
-  <meta name="description" content="Suivi en temps réel de l’avancée de mon récit." />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="container header">
-    <div class="brand">
-      <img src="assets/logo.png" alt="Logo" class="logo" />
-      <div>
-        <h1>Avancée du récit</h1>
-        <p class="subtitle">Live — rafraîchi toutes les <span id="refresh-interval">15</span> s</p>
+<main class="container">
+
+  <!-- Introduction -->
+  <section class="card intro">
+    <h2>À propos du récit</h2>
+    <p>
+      Chaque jour, j’écris et je vous partage l’avancée de mon récit. 
+      Vous pouvez le découvrir à votre rythme : en le lisant, ou en l’écoutant 
+      grâce à la version audio disponible sur les plateformes, 
+      accompagnée d’un montage visuel que je crée spécialement 
+      pour vous plonger encore plus dans l’histoire.
+    </p>
+  </section>
+
+  <!-- Progression -->
+  <section class="card">
+    <div class="progress-header">
+      <h2>Progression globale</h2>
+      <span id="last-update" class="last-update">Dernière mise à jour — …</span>
+    </div>
+    <div class="progress-bar">
+      <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-meta">
+      <div><strong id="percent">0%</strong> terminé</div>
+      <div class="status">
+        <span id="status-dot" class="dot dot--idle"></span>
+        <span id="current-task">Chargement…</span>
       </div>
     </div>
-    <div class="theme-switcher" aria-label="Changer le thème">
-      <button data-theme="brand" title="Thème marque">Marque</button>
-      <button data-theme="dark" title="Thème sombre">Sombre</button>
-      <button data-theme="light" title="Thème clair">Clair</button>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3> Jalons </h3>
+      <ul id="milestones" class="milestones"></ul>
     </div>
-  </header>
 
-  <main class="container">
-    <section class="card">
-      <div class="progress-header">
-        <h2>Progression globale</h2>
-        <span id="last-update" class="last-update">Dernière mise à jour — …</span>
-      </div>
-      <div class="progress-bar">
-        <div id="progress-fill" class="progress-fill" style="width:0%"></div>
-      </div>
-      <div class="progress-meta">
-        <div><strong id="percent">0%</strong> terminé</div>
-        <div class="status">
-          <span id="status-dot" class="dot dot--idle"></span>
-          <span id="current-task">Chargement…</span>
-        </div>
-      </div>
-    </section>
+    <div class="card">
+      <h3> Notes </h3>
+      <p id="notes">—</p>
+    </div>
+  </section>
 
-    <section class="grid">
-      <div class="card">
-        <h3> Jalons </h3>
-        <ul id="milestones" class="milestones"></ul>
-      </div>
-
-      <div class="card">
-        <h3> Notes </h3>
-        <p id="notes">—</p>
-      </div>
-    </section>
-
-    <section class="card">
-      <h3> Détails </h3>
-      <div id="details" class="details"></div>
-    </section>
-  </main>
-
-  <footer class="container footer">
-    <span>© <span id="year"></span> • Fait avec ❤️</span>
-    <span>•</span>
-    <a href="#" id="edit-link" target="_blank" rel="noopener">Modifier les données</a>
-  </footer>
-
-  <script>
-    // Configuration
-    const STATUS_URL = "status.json";       // Netlify sert status.json à la racine
-    const REFRESH_SECONDS = 15;             // Intervalle d'actualisation
-    const EDIT_URL_FALLBACK = "#";          // Au besoin, remplace par l'URL d'édition GitHub de status.json
-
-    // UI init
-    document.getElementById("refresh-interval").textContent = REFRESH_SECONDS.toString();
-    document.getElementById("year").textContent = new Date().getFullYear().toString();
-
-    // Thèmes
-    document.querySelectorAll(".theme-switcher button").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const theme = btn.getAttribute("data-theme");
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-      });
-    });
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
-
-  </script>
-  <script src="app.js"></script>
-</body>
-</html>
+  <section class="card">
+    <h3> Détails </h3>
+    <div id="details" class="details"></div>
+  </section>
+</main>
