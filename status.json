@@ -12,21 +12,21 @@
     {
       "title": "Chapitre 1 — La Douleur",
       "done": true,
-      "date": "2025-10-18"
-      "url": "chapitre1.html"    
+      "date": "2025-10-18",
+      "url": "chapitre1.html"
     },
     {
-      "title": "Chapitre 2 — ....",
+      "title": "Chapitre 2 — brouillon",
       "done": false,
       "date": null
     },
     {
-      "title": "Chapitre 2 — ....",
+      "title": "Chapitre 2 — relecture",
       "done": false,
       "date": null
     },
     {
-      "title": "Chapitre 3 — ....",
+      "title": "Chapitre 3 — ...",
       "done": false,
       "date": null
     }
@@ -39,3 +39,4 @@
   },
   "edit_url": "#"
 }
+
