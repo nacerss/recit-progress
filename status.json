@@ -1,25 +1,22 @@
 {
-  "percent": 3,
-  "current_task": "Chapitre 2 — relecture",
+  "percent": 50,
+  "current_task": "Chapitre 1 — La Douleur",
   "is_active": true,
-  "last_update": "2025-10-30T10:28:28.657428+00:00",
+  "last_update": "2025-10-30T11:20:00+00:00",
   "milestones": [
-    {
-      "title": "Plan détaillé",
-      "done": true,
-      "date": "2025-10-10"
-    },
     {
       "title": "Chapitre 1 — La Douleur",
       "done": true,
       "date": "2025-10-18",
       "url": "chapitre1.html"
-    },
+    }
   ],
-  "notes": "Je travaille sur la scène de l’île ; objectif: fluidifier le rythme et clarifier la voix du narrateur.",
+  "notes": "Premier chapitre terminé et publié.",
   "details": {
-    "Vous pouvez partager votre histoire dans la boîte aux lettres digitale bal@deuxmainstory.fr. Et si vous le désirez, elle pourra, au fil du temps, être intégrée au récit"
+    "text": "Vous pouvez partager votre histoire dans la boîte aux lettres digitale bal@deuxmainstory.fr. Et si vous le désirez, elle pourra, au fil du temps, être intégrée au récit.",
+    "email": "mailto:bal@deuxmainstory.fr"
   },
   "edit_url": "#"
 }
+
 
