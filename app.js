@@ -75,13 +75,45 @@ function render(data) {
   // Notes
   document.getElementById('notes').textContent = data.notes || '—';
 
-  // Détails
+  // Détails (auto-lien email & URL)
   const details = document.getElementById('details');
   details.innerHTML = '';
+
+  const isEmail = s => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+  const looksLikeMailto = s => typeof s === 'string' && s.toLowerCase().startsWith('mailto:');
+  const isURL = s => /^https?:\/\//i.test(s);
+
   if (data.details && typeof data.details === 'object') {
-    for (const [k, v] of Object.entries(data.details)) {
+    for (const [k, vRaw] of Object.entries(data.details)) {
       const p = document.createElement('p');
-      p.innerHTML = '<strong>' + k + ':</strong> ' + String(v);
+      const strong = document.createElement('strong');
+      strong.textContent = `${k} :`;
+      p.appendChild(strong);
+      p.append(' ');
+
+      const v = String(vRaw || '').trim();
+
+      if (isEmail(v)) {
+        const a = document.createElement('a');
+        a.href = `mailto:${v}`;
+        a.textContent = v;
+        p.appendChild(a);
+      } else if (looksLikeMailto(v)) {
+        const a = document.createElement('a');
+        a.href = v;
+        a.textContent = v.replace(/^mailto:/i, '');
+        p.appendChild(a);
+      } else if (isURL(v)) {
+        const a = document.createElement('a');
+        a.href = v;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = v;
+        p.appendChild(a);
+      } else {
+        p.append(v);
+      }
+
       details.appendChild(p);
     }
   }
