@@ -1,0 +1,5 @@
+# Désactive le cache CDN pour status.json afin que les mises à jour soient visibles immédiatement
+[[headers]]
+  for = "/status.json"
+  [headers.values]
+    Cache-Control = "no-store"
