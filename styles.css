@@ -100,3 +100,15 @@ h1 { font-weight: 800; letter-spacing: -0.02em; margin:0; }
 .footer { display:flex; align-items:center; gap:10px; justify-content:center; color: var(--muted); padding: 32px 0 40px; }
 .footer a { color: var(--muted); text-decoration: underline; }
 .details { color: var(--muted); font-size: .95rem; }
+
+.intro {
+  background: var(--card-bg, #fdfdfd);
+  border-left: 4px solid #6c63ff;
+  font-style: italic;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+.intro p {
+  margin: 0;
+}
+
